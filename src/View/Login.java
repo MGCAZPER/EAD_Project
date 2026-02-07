@@ -1,5 +1,6 @@
 package View;
 
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /*
@@ -162,19 +163,12 @@ public class Login extends javax.swing.JFrame {
     {
         return txtPassword.getText();
     }
+    public JButton getLogin(){
+        return btnLogin;
+    }
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-            Dashboard p = new Dashboard();
-            p.setVisible(true);
-            this.dispose();
-            try{
-                
-            }catch(Exception e)
-            {
-                JOptionPane.showMessageDialog(rootPane, e);
-            }finally{
-                System.out.println(" Execution Complete");
-        }
+            
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
