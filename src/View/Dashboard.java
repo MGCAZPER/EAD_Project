@@ -4,6 +4,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author WW
@@ -458,7 +460,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLecturesActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-            
+
         Login login = new Login();
             login.setVisible(true);
             this.dispose();        // TODO add your handling code here:
