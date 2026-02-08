@@ -1,7 +1,11 @@
 package View;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import Modle.DBConnection;
 
 public class Login extends javax.swing.JFrame {
 
@@ -142,20 +146,32 @@ public class Login extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    public String getUsername()
-    {
-        return txtUsername.getText();
-    }
-    public String getPassword()
-    {
-        return txtPassword.getText();
-    }
-    public JButton getLogin(){
-        return btnLogin;
-    }
+
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+           DBConnection dbcon =DBConnection.getInstance();
+            Connection con=dbcon.GetConnection();
+            con=DBConnection.getInstance().GetConnection();
+        String un = txtUsername.getText();
+        String pw = new String(txtPassword.getPassword());
+        try{
+        
+            PreparedStatement psmt=con.prepareStatement("select * from login where userName=? and Password=?");
+            psmt.setString(1,un);
+            psmt.setString(2,pw);
+            ResultSet rs=psmt.executeQuery();
             
+            if(rs.next()){
+                JOptionPane.showMessageDialog(rootPane,"Login Sucssesful");
+                Dashboard dash = new Dashboard();
+                dash.setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(rootPane,"Login fail");
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        } 
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
