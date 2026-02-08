@@ -6,10 +6,8 @@ package View;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author WW
- */
+
+
 public class Dashboard extends javax.swing.JFrame {
 
     /**
@@ -17,8 +15,10 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+   
+        
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,7 +47,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         pneStudents = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblStudent = new javax.swing.JTable();
         btnRefresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -233,7 +233,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         pneStudents.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblStudent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null}
             },
@@ -241,7 +241,7 @@ public class Dashboard extends javax.swing.JFrame {
                 "StudentID", "Course Name", "Batch", "Contact", "Email", "DOB", "Adress"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tblStudent);
 
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -531,7 +531,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JLabel lblusr;
     private javax.swing.JPanel pneCourse;
@@ -541,5 +540,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel pneMsg;
     private javax.swing.JPanel pneStudents;
     private javax.swing.JTabbedPane tabDash;
+    private javax.swing.JTable tblStudent;
     // End of variables declaration//GEN-END:variables
 }

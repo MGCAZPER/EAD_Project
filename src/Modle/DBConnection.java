@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DBConnection {
     private Connection con;
-    private String URL="jdbc:mysql://localhost/software";
+    private String URL="jdbc:mysql://localhost/student_management";
     private String Username="root";
     private String Password="";
     private static DBConnection Instance;

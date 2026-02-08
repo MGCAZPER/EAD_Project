@@ -10,9 +10,9 @@ import View.Dashboard;
 public class Login_logic {
     public String Login(String username,String password){
         if (username == null||username.trim().equals("") || password == null|| password.trim().equals("")){
-            return "Empty Feild";
+            return "EF";
         }
-         String sql = "SELECT 1 FROM users WHERE username = ? AND password = ?";
+         String sql = "SELECT * FROM login WHERE username = ? AND password = ?";
          try{
             Connection con = (Connection) DBConnection.getInstance();
             PreparedStatement pst = con.prepareStatement(sql);
