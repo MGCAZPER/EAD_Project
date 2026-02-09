@@ -353,7 +353,7 @@ public class Accounts extends javax.swing.JFrame {
             Connection con=dbcon.GetConnection();
             con=DBConnection.getInstance().GetConnection();
 
-            String sqlStudent = "INSERT INTO employee (Emp_ID, Employee,Employee_Role,DOB,Emp_joindate,Adress,Email,Contact) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sqlStudent = "INSERT INTO Accounts (Emp_ID, Employee,Employee_Role,DOB,Emp_joindate,Adress,Email,Contact) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pstStudent = con.prepareStatement(sqlStudent);
             pstStudent.setString(1, EmpID );

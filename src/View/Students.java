@@ -463,7 +463,7 @@ public class Students extends javax.swing.JFrame {
         String GEmail = txtGEmail.getText();
 
         if (Fname.equals("") || Lname.equals("") || NWI.equals("")||NIC.equals("") || Adress.equals("") || Email.equals("")
-                || Course.equals("") || Contact.equals("")|| GNWI.equals("")||GNIC.equals("") || GAdress.equals("")|| Time.equals("")|| GContact.equals("")) {
+                || Course.equals("") || Contact.equals("")|| GNWI.equals("")||GNIC.equals("") || GAdress.equals("")|| Time.equals("")|| GContact.equals("")|| GEmail.equals("")) {
             JOptionPane.showMessageDialog(this, "Fill all fields");
             return;
         }
@@ -487,7 +487,7 @@ public class Students extends javax.swing.JFrame {
             pstStudent.setString(9, Contact);
             pstStudent.executeUpdate();
             
-            String sqlGurdian = "INSERT INTO Gurdian (GNWTd,GNIC,GAdress,GEmail,GContact) VALUES ( ?, ?, ?, ?, ?)";
+            String sqlGurdian = "INSERT INTO Gurdian (GNWT,GNIC,GAdress,GEmail,GContact) VALUES ( ?, ?, ?, ?, ?)";
 
             PreparedStatement pstGurdian = con.prepareStatement(sqlGurdian);
             pstGurdian.setString(1, GNWI);

@@ -4,7 +4,12 @@
  */
 package View;
 
+import Modle.DBConnection;
+import java.sql.Connection;
 import javax.swing.JOptionPane;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -15,6 +20,7 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+
    
         
     }
@@ -45,7 +51,7 @@ public class Dashboard extends javax.swing.JFrame {
         pneCourse = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCourse = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnRefresh1 = new javax.swing.JButton();
@@ -59,14 +65,10 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         pneLecture = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tblschedule = new javax.swing.JTable();
         btnRefresh3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        pneMsg = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1080, 675));
@@ -219,7 +221,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCourse.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -227,7 +229,7 @@ public class Dashboard extends javax.swing.JFrame {
                 "Course Name", "Admission Fee", "Course Fee", "Course  Director", "Duration"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblCourse);
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic", 1, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -296,10 +298,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         tblStudent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "StudentID", "Course Name", "Batch", "Contact", "Email", "DOB", "Adress"
+                "First Name", "Last Name", "NWI", "NIC", "Adress", "Email", "Course", "Time", "Contact"
             }
         ));
         jScrollPane3.setViewportView(tblStudent);
@@ -369,15 +371,15 @@ public class Dashboard extends javax.swing.JFrame {
 
         pneLecture.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tblschedule.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Module", "Lectureer", "Location", "Batch", "Session", "Date"
+                "Module", "Lecturer", "Location", "Batch", "Session", "Date"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(tblschedule);
 
         btnRefresh3.setBackground(new java.awt.Color(102, 204, 255));
         btnRefresh3.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
@@ -442,92 +444,20 @@ public class Dashboard extends javax.swing.JFrame {
 
         tabDash.addTab("Lecturer", jPanel4);
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1150, Short.MAX_VALUE)
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 595, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1150, Short.MAX_VALUE)
-            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel10Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 595, Short.MAX_VALUE)
-            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel10Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        pneMsg.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout pneMsgLayout = new javax.swing.GroupLayout(pneMsg);
-        pneMsg.setLayout(pneMsgLayout);
-        pneMsgLayout.setHorizontalGroup(
-            pneMsgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1237, Short.MAX_VALUE)
-        );
-        pneMsgLayout.setVerticalGroup(
-            pneMsgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 595, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pneMsg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pneMsg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        tabDash.addTab("Messagers", jPanel5);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabDash)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tabDash)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tabDash, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(tabDash, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -572,15 +502,106 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAccountsActionPerformed
 
     private void btnRefresh1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefresh1ActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblCourse.getModel();
+        model.setRowCount(0);
+
+    try {
+           DBConnection dbcon =DBConnection.getInstance();
+            Connection con=dbcon.GetConnection();
+            con=DBConnection.getInstance().GetConnection();
+
+        String sql = "SELECT * FROM course";
+        PreparedStatement pst = con.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) { 
+            Object[] row = {
+                rs.getString("CName"),
+                rs.getString("Afee"),
+                rs.getString("CFee"),
+                rs.getString("CDirector"),
+                rs.getString("Duration")
+            };
+            model.addRow(row);
+        }
+
+        
+
+    } catch (Exception e) {
+        System.out.println(e);
+        JOptionPane.showMessageDialog(this, "Error Occured While Running");
+    }      // TODO add your handling code here:        
     }//GEN-LAST:event_btnRefresh1ActionPerformed
 
     private void btnRefresh2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefresh2ActionPerformed
-        // TODO add your handling code here:
+   
+     DefaultTableModel model = (DefaultTableModel) tblStudent.getModel();
+        model.setRowCount(0);
+
+    try {
+           DBConnection dbcon =DBConnection.getInstance();
+            Connection con=dbcon.GetConnection();
+            con=DBConnection.getInstance().GetConnection();
+
+        String sql = "SELECT * FROM student";
+        PreparedStatement pst = con.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) { 
+            Object[] row = {
+                rs.getString("Fname"),
+                rs.getString("Lname"),
+                rs.getString("NWI"),
+                rs.getString("NIC"),
+                rs.getString("Adress"),
+                rs.getString("Email"),
+                rs.getString("Course"),
+                rs.getString("Time"),
+                rs.getString("Contact")
+            };
+            model.addRow(row);
+        }
+
+        
+
+    } catch (Exception e) {
+        System.out.println(e);
+        JOptionPane.showMessageDialog(this, "Error Occured While Running");
+    }        // TODO add your handling code here:
     }//GEN-LAST:event_btnRefresh2ActionPerformed
 
     private void btnRefresh3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefresh3ActionPerformed
-        // TODO add your handling code here:
+   
+     DefaultTableModel model = (DefaultTableModel) tblschedule.getModel();
+        model.setRowCount(0);
+
+    try {
+           DBConnection dbcon =DBConnection.getInstance();
+            Connection con=dbcon.GetConnection();
+            con=DBConnection.getInstance().GetConnection();
+
+        String sql = "SELECT * FROM schedual";
+        PreparedStatement pst = con.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+
+        while (rs.next()) {
+            Object[] row = {
+                rs.getString("Module"),
+                rs.getString("LectureName"),
+                rs.getString("Location"),
+                rs.getString("Batch"),
+                rs.getString("Session"),
+                rs.getString("Date")
+            };
+            model.addRow(row);
+        }
+
+        
+
+    } catch (Exception e) {
+        System.out.println(e);
+        JOptionPane.showMessageDialog(this, "Error Occured While Running");
+    }        
     }//GEN-LAST:event_btnRefresh3ActionPerformed
 
     private void btnSettings1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettings1ActionPerformed
@@ -648,25 +669,21 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable4;
     private javax.swing.JLabel lblusr;
     private javax.swing.JPanel pneCourse;
     private javax.swing.JPanel pneHome;
     private javax.swing.JPanel pneLecture;
     private javax.swing.JPanel pneMenu;
-    private javax.swing.JPanel pneMsg;
     private javax.swing.JPanel pneStudents;
     private javax.swing.JTabbedPane tabDash;
+    private javax.swing.JTable tblCourse;
     private javax.swing.JTable tblStudent;
+    private javax.swing.JTable tblschedule;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class DBConnection {
     private Connection con;
-    private String URL="jdbc:mysql://localhost/student_management";
+    private String URL="jdbc:mysql://localhost/studentmanagement";
     private String Username="root";
     private String Password="";
     private static DBConnection Instance;

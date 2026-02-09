@@ -51,15 +51,37 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="395" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" pref="58" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Fax" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Staff and Lecture Managment "/>
+          </Properties>
+        </Component>
+      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
@@ -424,21 +446,21 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel18" min="-2" pref="77" max="-2" attributes="0"/>
-                                          <Component id="cmbTime1" min="-2" pref="118" max="-2" attributes="0"/>
+                                          <Component id="cmbFc" min="-2" pref="118" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel21" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                                          <Component id="txtLname2" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
+                                          <Component id="txtSpec" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtNWI2" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
+                                          <Component id="txtUni" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
                                           <Component id="jLabel22" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtContact1" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
+                                          <Component id="txtSer" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
                                           <Component id="jLabel23" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -521,7 +543,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtContact1" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="txtSer" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -529,14 +551,14 @@
                                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="txtLname2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <Component id="cmbTime1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="txtSpec" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="cmbFc" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txtNWI2" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="txtUni" min="-2" pref="30" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -689,23 +711,23 @@
                         <Property name="text" type="java.lang.String" value="Specalization"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtLname2">
+                    <Component class="javax.swing.JTextField" name="txtSpec">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel22">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="University"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtNWI2">
+                    <Component class="javax.swing.JTextField" name="txtUni">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel23">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Service "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtContact1">
+                    <Component class="javax.swing.JTextField" name="txtSer">
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="cmbTime1">
+                    <Component class="javax.swing.JComboBox" name="cmbFc">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="4">

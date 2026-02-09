@@ -30,6 +30,7 @@ public class Lecturer extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -76,12 +77,12 @@ public class Lecturer extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        txtLname2 = new javax.swing.JTextField();
+        txtSpec = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        txtNWI2 = new javax.swing.JTextField();
+        txtUni = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        txtContact1 = new javax.swing.JTextField();
-        cmbTime1 = new javax.swing.JComboBox<>();
+        txtSer = new javax.swing.JTextField();
+        cmbFc = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -89,15 +90,26 @@ public class Lecturer extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(51, 89, 245));
 
+        jLabel1.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Staff and Lecture Managment ");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -320,7 +332,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         jLabel23.setText("Service ");
 
-        cmbTime1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Engineering", "Business", "Language" }));
+        cmbFc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Engineering", "Business", "Language" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -365,18 +377,18 @@ public class Lecturer extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbTime1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbFc, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(8, 8, 8)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLname2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtSpec, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNWI2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUni, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtContact1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSer, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(26, 26, 26))
             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -441,19 +453,19 @@ public class Lecturer extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtContact1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtSer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtLname2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmbTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtSpec, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbFc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel22)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNWI2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtUni, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addComponent(jLabel18)))
                 .addGap(63, 63, 63)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -540,7 +552,7 @@ public class Lecturer extends javax.swing.JFrame {
             Connection con=dbcon.GetConnection();
             con=DBConnection.getInstance().GetConnection();
 
-            String sqlLec = "INSERT INTO Schedual (Module, LectureName,Location,NIC,Adress,Email,Course,Time,Contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sqlLec = "INSERT INTO schedual (Module, LectureName,Location,Batch,Session,Date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pstLec = con.prepareStatement(sqlLec);
             pstLec.setString(1,Module );
@@ -550,7 +562,7 @@ public class Lecturer extends javax.swing.JFrame {
             pstLec.setString(5, Session);
             pstLec.setString(6, Date);
             
-
+            JOptionPane.showMessageDialog(this, "Data Saved Successfully");
             // Clear Text Feilds Data 
             txtModule.setText("");
             txtSession.setText("");
@@ -587,14 +599,19 @@ public class Lecturer extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // Student Details
-        String Fname = txtModule.getText();
-        String Lname = txtSession.getText();
-        String NWI = txtDate.getText();
-        String NIC = txtLocation.getText();
-        String Adress = txtLecturer.getText();
-        String Email = txtBatch.getText();
+        String Fname = txtFname1.getText();
+        String Lname = txtLname1.getText();
+        String NWI = txtNWI1.getText();
+        String NIC = txtNIC1.getText();
+        String Adress = txtAdress1.getText();
+        String Email = txtEmail1.getText();
         String Time = cmbTime.getSelectedItem().toString();
         String Contact = txtContact.getText();
+        String Fac = cmbFc.getSelectedItem().toString();
+        String Spec = txtSpec.getText();
+        String Uni = txtUni.getText();
+        String Ser = txtSer.getText();
+        
 
 
         if (Fname.equals("") || Lname.equals("") || NWI.equals("")||NIC.equals("") || Adress.equals("") || Email.equals("")
@@ -608,7 +625,7 @@ public class Lecturer extends javax.swing.JFrame {
             Connection con=dbcon.GetConnection();
             con=DBConnection.getInstance().GetConnection();
 
-            String sqlStudent = "INSERT INTO student (Fname, Lname,NWI,NIC,Adress,Email,Course,Time,Contact) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sqlStudent = "INSERT INTO lecturer (Fname, Lname,NWI,NIC,Adress,Email,Time,Contact,Fac,Spec,Uni,Ser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pstStudent = con.prepareStatement(sqlStudent);
             pstStudent.setString(1,Fname );
@@ -617,22 +634,29 @@ public class Lecturer extends javax.swing.JFrame {
             pstStudent.setString(4,NIC );
             pstStudent.setString(5, Adress);
             pstStudent.setString(6, Email);
-            pstStudent.setString(8, Time);
-            pstStudent.setString(9, Contact);
+            pstStudent.setString(7, Time);
+            pstStudent.setString(8, Contact);
+            pstStudent.setString(9, Fac);
+            pstStudent.setString(10, Spec);
+            pstStudent.setString(11, Uni);
+            pstStudent.setString(12, Ser);
             pstStudent.executeUpdate();
 
 
 
             JOptionPane.showMessageDialog(this, "Data Saved Successfully");
 
-            txtModule.setText("");
-            txtSession.setText("");
-            txtDate.setText("");
-            txtLocation.setText("");
-            txtLecturer.setText("");
-            txtBatch.setText("");
+            txtFname1.setText("");
+            txtLname1.setText("");
+            txtNWI1.setText("");
+            txtNIC1.setText("");
+            txtAdress1.setText("");
+            txtEmail1.setText("");
             txtContact.setText("");
-
+            txtSpec.setText("");
+            txtUni.setText("");
+            txtSer.setText("");
+            
 
         } catch (Exception e) {
 
@@ -642,13 +666,16 @@ public class Lecturer extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        txtModule.setText("");
-        txtSession.setText("");
-        txtDate.setText("");
-        txtLocation.setText("");
-        txtLecturer.setText("");
-        txtBatch.setText("");
-        txtContact.setText("");
+            txtFname1.setText("");
+            txtLname1.setText("");
+            txtNWI1.setText("");
+            txtNIC1.setText("");
+            txtAdress1.setText("");
+            txtEmail1.setText("");
+            txtContact.setText("");
+            txtSpec.setText("");
+            txtUni.setText("");
+            txtSer.setText("");
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -694,8 +721,8 @@ public class Lecturer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbFc;
     private javax.swing.JComboBox<String> cmbTime;
-    private javax.swing.JComboBox<String> cmbTime1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -703,6 +730,7 @@ public class Lecturer extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -734,18 +762,18 @@ public class Lecturer extends javax.swing.JFrame {
     private javax.swing.JTextField txtAdress1;
     private javax.swing.JTextField txtBatch;
     private javax.swing.JTextField txtContact;
-    private javax.swing.JTextField txtContact1;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtFname1;
     private javax.swing.JTextField txtLecturer;
     private javax.swing.JTextField txtLname1;
-    private javax.swing.JTextField txtLname2;
     private javax.swing.JTextField txtLocation;
     private javax.swing.JTextField txtModule;
     private javax.swing.JTextField txtNIC1;
     private javax.swing.JTextField txtNWI1;
-    private javax.swing.JTextField txtNWI2;
+    private javax.swing.JTextField txtSer;
     private javax.swing.JTextField txtSession;
+    private javax.swing.JTextField txtSpec;
+    private javax.swing.JTextField txtUni;
     // End of variables declaration//GEN-END:variables
 }
